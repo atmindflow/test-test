@@ -1,12 +1,10 @@
-# Pastel Page
+# Pastel Dream (static)
 
-Une page statique **HTML/CSS/JS** avec un design pastel (responsive + micro-interactions).
+Petite landing page statique (HTML/CSS/JS) avec couleurs pastel + micro-interactions.
 
-## Déploiement sur Vercel
+## Déploiement
 
-- Importez le repo sur Vercel (New Project → Import Git Repository).
-- Framework Preset : **Other**
-- Build Command : *(vide)*
-- Output Directory : *(vide / root)*
+- **Vercel** : si le repo est déjà lié à Vercel, un push sur `main` déclenche un déploiement.
+- **Local** : ouvre simplement `index.html` dans ton navigateur.
 
-Vercel détectera `index.html` à la racine et servira la page.
+

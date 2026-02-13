@@ -2,157 +2,145 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Webpage pastel</title>
-    <meta name="description" content="Une petite webpage complète aux couleurs pastel" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pastel Dream — Mindflow</title>
+    <meta name="description" content="Une petite webpage pastel, responsive, avec une touche d'animation." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
+    <div class="bg" aria-hidden="true">
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="blob blob--3"></div>
+      <div class="grid"></div>
+    </div>
+
+    <header class="top">
       <div class="brand">
-        <span class="logo" aria-hidden="true">MF</span>
-        <span class="brand__name">Pastel Page</span>
+        <span class="logo" aria-hidden="true">◎</span>
+        <span>Pastel Dream</span>
       </div>
 
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="#features">Features</a>
-        <a href="#gallery">Palette</a>
+      <nav class="nav">
+        <a href="#features">Fonctionnalités</a>
+        <a href="#palette">Palette</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <button class="btn btn--ghost" id="themeBtn" type="button" aria-pressed="false">
-        Basculer le mode
+      <button id="themeBtn" class="btn btn--ghost" type="button" aria-label="Basculer le thème">
+        Thème
       </button>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="heroTitle">
-        <div class="hero__card">
-          <p class="pill">💡 Minimal, doux, pastel</p>
-          <h1 id="heroTitle">Une belle webpage complète, <span class="accent">en couleurs pastel</span>.</h1>
+    <main class="container">
+      <section class="hero">
+        <div class="hero__copy">
+          <p class="kicker">Une page statique, douce et moderne</p>
+          <h1>Une <span class="grad">webpage complète</span> aux couleurs pastel.</h1>
           <p class="lead">
-            Un template statique (HTML/CSS/JS) prêt à déployer sur Vercel.
-            Animations légères, responsive, et accessible.
+            Responsive, légère, et avec de petites animations. Déployée facilement sur Vercel (si ton repo est déjà lié).
           </p>
 
-          <div class="hero__actions">
-            <a class="btn" href="#features">Découvrir</a>
-            <a class="btn btn--soft" href="#contact">Me contacter</a>
+          <div class="cta">
+            <a class="btn" href="#palette">Voir la palette</a>
+            <a class="btn btn--ghost" href="https://github.com/atmindflow/test-test" target="_blank" rel="noreferrer">Code sur GitHub</a>
           </div>
 
-          <div class="stats" role="list" aria-label="Quelques métriques">
-            <div class="stat" role="listitem">
-              <div class="stat__num" id="statColors">6</div>
-              <div class="stat__label">couleurs</div>
-            </div>
-            <div class="stat" role="listitem">
-              <div class="stat__num">100%</div>
-              <div class="stat__label">statique</div>
-            </div>
-            <div class="stat" role="listitem">
-              <div class="stat__num">1</div>
-              <div class="stat__label">page</div>
-            </div>
+          <div class="chips" aria-label="Badges">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JS</span>
+            <span class="chip">Vercel-ready</span>
           </div>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="blob blob--a"></div>
-          <div class="blob blob--b"></div>
-          <div class="blob blob--c"></div>
-          <div class="floating">
-            <div class="floating__card">
-              <div class="spark"></div>
-              <div>Déployable en 2 minutes</div>
-              <small>GitHub → Vercel</small>
+        <aside class="hero__card" aria-label="Carte de démonstration">
+          <div class="card">
+            <div class="card__top">
+              <div class="dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="status">
+                <span class="pulse" aria-hidden="true"></span>
+                Live
+              </div>
+            </div>
+
+            <div class="card__body">
+              <h2>Mini météo pastel</h2>
+              <p>Choisis une ambiance :</p>
+
+              <div class="seg" role="tablist" aria-label="Ambiances">
+                <button class="seg__btn is-active" data-mood="sunrise" type="button" role="tab" aria-selected="true">Aurore</button>
+                <button class="seg__btn" data-mood="mint" type="button" role="tab" aria-selected="false">Menthe</button>
+                <button class="seg__btn" data-mood="lilac" type="button" role="tab" aria-selected="false">Lilas</button>
+              </div>
+
+              <div class="meter">
+                <div class="meter__label">Douceur</div>
+                <div class="meter__bar"><div id="meterFill" class="meter__fill" style="width: 72%"></div></div>
+                <div id="meterValue" class="meter__value">72%</div>
+              </div>
+
+              <p class="small">Astuce : le bouton “Thème” en haut bascule un mode nuit.</p>
             </div>
           </div>
-        </div>
+        </aside>
       </section>
 
-      <section class="section" id="features" aria-labelledby="featuresTitle">
-        <div class="section__head">
-          <h2 id="featuresTitle">Ce que la page inclut</h2>
-          <p>Des composants simples et jolis, parfaits pour une landing page.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <h3>Design pastel</h3>
-            <p>Dégradés doux, ombres subtiles, et typographie moderne.</p>
+      <section id="features" class="section">
+        <h2>Fonctionnalités</h2>
+        <div class="features">
+          <article class="feature">
+            <h3>Pastels + contraste</h3>
+            <p>Une palette douce mais lisible, avec un contraste adapté pour le texte.</p>
           </article>
-          <article class="card">
+          <article class="feature">
             <h3>Responsive</h3>
-            <p>Une mise en page fluide qui s’adapte aux écrans mobiles et desktop.</p>
+            <p>Layout adaptatif (grille, cartes) pour mobile, tablette et desktop.</p>
           </article>
-          <article class="card">
-            <h3>Accessible</h3>
-            <p>Structure sémantique, contrastes corrects, et navigation clavier.</p>
-          </article>
-          <article class="card">
+          <article class="feature">
             <h3>Micro-interactions</h3>
-            <p>Boutons animés, hover doux, compteur de couleurs, et toggle de thème.</p>
+            <p>Petites animations (blobs, transitions) et une carte interactive.</p>
           </article>
         </div>
       </section>
 
-      <section class="section" id="gallery" aria-labelledby="galleryTitle">
-        <div class="section__head">
-          <h2 id="galleryTitle">Palette</h2>
-          <p>Clique sur une couleur pour la copier (hex) dans le presse-papier.</p>
+      <section id="palette" class="section">
+        <h2>Palette</h2>
+        <p class="muted">Clique pour copier une couleur.</p>
+        <div class="palette" role="list">
+          <button class="swatch" style="--c:#ffd6e8" data-color="#ffd6e8" role="listitem" type="button">Rose</button>
+          <button class="swatch" style="--c:#d9f2ff" data-color="#d9f2ff" role="listitem" type="button">Bleu</button>
+          <button class="swatch" style="--c:#ddf7e3" data-color="#ddf7e3" role="listitem" type="button">Vert</button>
+          <button class="swatch" style="--c:#f5e3ff" data-color="#f5e3ff" role="listitem" type="button">Lilas</button>
+          <button class="swatch" style="--c:#fff1cc" data-color="#fff1cc" role="listitem" type="button">Vanille</button>
+          <button class="swatch" style="--c:#dfe7ff" data-color="#dfe7ff" role="listitem" type="button">Pervenche</button>
         </div>
 
-        <div class="palette" id="palette">
-          <button class="swatch" data-color="#F7C8E0" style="--c:#F7C8E0" type="button" aria-label="Copier #F7C8E0"><span>#F7C8E0</span></button>
-          <button class="swatch" data-color="#DFFFD8" style="--c:#DFFFD8" type="button" aria-label="Copier #DFFFD8"><span>#DFFFD8</span></button>
-          <button class="swatch" data-color="#CDE8FF" style="--c:#CDE8FF" type="button" aria-label="Copier #CDE8FF"><span>#CDE8FF</span></button>
-          <button class="swatch" data-color="#FFF3B0" style="--c:#FFF3B0" type="button" aria-label="Copier #FFF3B0"><span>#FFF3B0</span></button>
-          <button class="swatch" data-color="#E6D6FF" style="--c:#E6D6FF" type="button" aria-label="Copier #E6D6FF"><span>#E6D6FF</span></button>
-          <button class="swatch" data-color="#BFF4ED" style="--c:#BFF4ED" type="button" aria-label="Copier #BFF4ED"><span>#BFF4ED</span></button>
-        </div>
-
-        <p class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
       </section>
 
-      <section class="section" id="contact" aria-labelledby="contactTitle">
-        <div class="section__head">
-          <h2 id="contactTitle">Un petit mot</h2>
-          <p>Formulaire de démo (sans backend) avec validation légère côté client.</p>
+      <section id="contact" class="section">
+        <h2>Petit mot</h2>
+        <p class="muted">
+          Si ton repo GitHub est bien relié à Vercel, un push sur <code>main</code> déclenche automatiquement un déploiement.
+        </p>
+
+        <div class="note">
+          <strong>Déploiement :</strong> ouvre Vercel → ton projet → “Deployments” pour récupérer l’URL publique.
         </div>
-
-        <form class="form" id="contactForm" novalidate>
-          <label>
-            <span>Nom</span>
-            <input name="name" autocomplete="name" placeholder="Votre nom" required minlength="2" />
-          </label>
-
-          <label>
-            <span>Email</span>
-            <input name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required />
-          </label>
-
-          <label class="full">
-            <span>Message</span>
-            <textarea name="message" rows="5" placeholder="Écrivez un petit message…" required minlength="10"></textarea>
-          </label>
-
-          <div class="form__actions">
-            <button class="btn" type="submit">Envoyer (démo)</button>
-            <button class="btn btn--ghost" type="reset">Reset</button>
-          </div>
-
-          <p class="form__hint" id="formHint" role="status" aria-live="polite"></p>
-        </form>
       </section>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Pastel Dream</span>
+        <span class="sep" aria-hidden="true">•</span>
+        <a href="https://github.com/atmindflow/test-test" target="_blank" rel="noreferrer">Repo</a>
+      </footer>
     </main>
-
-    <footer class="footer">
-      <p>Fait avec HTML/CSS/JS — parfait pour Vercel.</p>
-      <p class="muted">© <span id="year"></span> Pastel Page</p>
-    </footer>
 
     <script src="script.js"></script>
   </body>
