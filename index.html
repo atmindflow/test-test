@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Webpage pastel</title>
+    <meta name="description" content="Une petite webpage complète aux couleurs pastel" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">MF</span>
+        <span class="brand__name">Pastel Page</span>
+      </div>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#features">Features</a>
+        <a href="#gallery">Palette</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="btn btn--ghost" id="themeBtn" type="button" aria-pressed="false">
+        Basculer le mode
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero__card">
+          <p class="pill">💡 Minimal, doux, pastel</p>
+          <h1 id="heroTitle">Une belle webpage complète, <span class="accent">en couleurs pastel</span>.</h1>
+          <p class="lead">
+            Un template statique (HTML/CSS/JS) prêt à déployer sur Vercel.
+            Animations légères, responsive, et accessible.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#features">Découvrir</a>
+            <a class="btn btn--soft" href="#contact">Me contacter</a>
+          </div>
+
+          <div class="stats" role="list" aria-label="Quelques métriques">
+            <div class="stat" role="listitem">
+              <div class="stat__num" id="statColors">6</div>
+              <div class="stat__label">couleurs</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat__num">100%</div>
+              <div class="stat__label">statique</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat__num">1</div>
+              <div class="stat__label">page</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="blob blob--a"></div>
+          <div class="blob blob--b"></div>
+          <div class="blob blob--c"></div>
+          <div class="floating">
+            <div class="floating__card">
+              <div class="spark"></div>
+              <div>Déployable en 2 minutes</div>
+              <small>GitHub → Vercel</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="featuresTitle">
+        <div class="section__head">
+          <h2 id="featuresTitle">Ce que la page inclut</h2>
+          <p>Des composants simples et jolis, parfaits pour une landing page.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Design pastel</h3>
+            <p>Dégradés doux, ombres subtiles, et typographie moderne.</p>
+          </article>
+          <article class="card">
+            <h3>Responsive</h3>
+            <p>Une mise en page fluide qui s’adapte aux écrans mobiles et desktop.</p>
+          </article>
+          <article class="card">
+            <h3>Accessible</h3>
+            <p>Structure sémantique, contrastes corrects, et navigation clavier.</p>
+          </article>
+          <article class="card">
+            <h3>Micro-interactions</h3>
+            <p>Boutons animés, hover doux, compteur de couleurs, et toggle de thème.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="section__head">
+          <h2 id="galleryTitle">Palette</h2>
+          <p>Clique sur une couleur pour la copier (hex) dans le presse-papier.</p>
+        </div>
+
+        <div class="palette" id="palette">
+          <button class="swatch" data-color="#F7C8E0" style="--c:#F7C8E0" type="button" aria-label="Copier #F7C8E0"><span>#F7C8E0</span></button>
+          <button class="swatch" data-color="#DFFFD8" style="--c:#DFFFD8" type="button" aria-label="Copier #DFFFD8"><span>#DFFFD8</span></button>
+          <button class="swatch" data-color="#CDE8FF" style="--c:#CDE8FF" type="button" aria-label="Copier #CDE8FF"><span>#CDE8FF</span></button>
+          <button class="swatch" data-color="#FFF3B0" style="--c:#FFF3B0" type="button" aria-label="Copier #FFF3B0"><span>#FFF3B0</span></button>
+          <button class="swatch" data-color="#E6D6FF" style="--c:#E6D6FF" type="button" aria-label="Copier #E6D6FF"><span>#E6D6FF</span></button>
+          <button class="swatch" data-color="#BFF4ED" style="--c:#BFF4ED" type="button" aria-label="Copier #BFF4ED"><span>#BFF4ED</span></button>
+        </div>
+
+        <p class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contactTitle">
+        <div class="section__head">
+          <h2 id="contactTitle">Un petit mot</h2>
+          <p>Formulaire de démo (sans backend) avec validation légère côté client.</p>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <label>
+            <span>Nom</span>
+            <input name="name" autocomplete="name" placeholder="Votre nom" required minlength="2" />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required />
+          </label>
+
+          <label class="full">
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Écrivez un petit message…" required minlength="10"></textarea>
+          </label>
+
+          <div class="form__actions">
+            <button class="btn" type="submit">Envoyer (démo)</button>
+            <button class="btn btn--ghost" type="reset">Reset</button>
+          </div>
+
+          <p class="form__hint" id="formHint" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Fait avec HTML/CSS/JS — parfait pour Vercel.</p>
+      <p class="muted">© <span id="year"></span> Pastel Page</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
